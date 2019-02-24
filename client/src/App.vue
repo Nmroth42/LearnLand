@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <v-app>
-      <page-header/>
-      <Drawer/>
+      <page-header />
+      <Drawer />
       <main>
         <v-container>
           <router-view> </router-view>
@@ -21,7 +21,18 @@
     components: {
       PageHeader,
       Drawer
-    }
+    },
+    created() {
+      if (this.$store.state.token !== null) {
+        this.$cookie.set('token-auth', this.$store.state.token, 1 * 60)
+      }
+      if ((this.$store.state.token == null) && (this.$cookie.get('token-auth') !== null)) {
+        this.$store.state.token = this.$cookie.get('token-auth');
+        this.$store.state.isUserLoggedIn = true
+      }
+
+
+    },
   }
 
 </script>

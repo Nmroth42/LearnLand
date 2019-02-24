@@ -3,14 +3,7 @@
     <aside v-show="$store.state.IsDrawerOpen" id="s">
     
    
-      <div>
-      dib asdasd
-      dib asdasddib
-      </div>
-        <div>
-      dib asdasd
-      dib asdasddib
-      </div>
+     
       
     
       

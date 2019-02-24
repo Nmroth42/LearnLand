@@ -2,6 +2,10 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 
 Vue.use(Vuex)
+var VueCookie = require('vue-cookie');
+// Tell Vue to use the plugin
+Vue.use(VueCookie);
+
 
 export default new Vuex.Store({
     strict: true,
@@ -17,6 +21,7 @@ export default new Vuex.Store({
             state.token = token
             if (token) {
                 state.isUserLoggedIn = true
+                this.$cookie.set('token-auth', this.$store.state.token, 1*60)
             } else {
                 state.isUserLoggedIn = false
             }

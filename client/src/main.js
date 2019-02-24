@@ -10,6 +10,9 @@ import 'vuetify/dist/vuetify.min.css'
 import store from '@/store/store'
 import VueYouTubeEmbed from 'vue-youtube-embed'
 
+var VueCookie = require('vue-cookie');
+// Tell Vue to use the plugin
+Vue.use(VueCookie);
 
 
 Vue.use(VueYouTubeEmbed)

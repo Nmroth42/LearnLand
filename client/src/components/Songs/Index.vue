@@ -31,7 +31,22 @@ import SongsSearch from './SongsSearchPanel'
       navigateTo(route) {
         this.$router.push(route)
       }
-    }
+    },
+      mounted() {
+    
+ if  (this.$store.state.token !== null) {
+     this.$cookie.set('token-auth', this.$store.state.token, 1*60)
+  
+       
+     
+ }
+ if  (this.$store.state.token == null) {
+    this.$store.state.token = this.$cookie.get('token-auth');
+    
+ }
+    
+  
+},
   }
 
 </script>

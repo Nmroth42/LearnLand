@@ -6,7 +6,7 @@
       <span @click="navigateTo({name:'root'})">
           <div class="tittleWrapper">
          <div class="tittle1">
-          YouSong
+          YouSongLyrics
         </div>
           </div>
       </span>
@@ -16,7 +16,7 @@
    
       <v-spacer></v-spacer>
       
-      <v-btn flat @click="navigateTo({name:'songs'})" v-if="!$store.state.isUserLoggedIn">
+      <v-btn flat @click="navigateTo({name:'songs'})" v-if="$store.state.isUserLoggedIn">
             <router-link to="/songs">
         Browse
          </router-link>
@@ -62,11 +62,15 @@
     methods: {
       navigateTo(route) {
         this.$router.push(route)
+        
       },
       logout(route) {
-        this.$router.push(route)
+        this.$router.push({
+          name: 'root'
+        })
         this.$store.dispatch('setToken', null)
         this.$store.dispatch('setUser', null)
+        
 
       },
       drawerOpen(){
@@ -74,7 +78,12 @@
         this.$store.dispatch('OpenDrawer', !this.$store.state.IsDrawerOpen)
        
       }
-    }
+    },
+     mounted() {
+    
+
+  
+},
   }
 
 </script>

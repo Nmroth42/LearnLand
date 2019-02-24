@@ -4,7 +4,12 @@
 
 <script>
 export default {
+  mounted() {
+    
+this.$cookie.delete('token-auth')
+    
   
+},
 }
 </script>
 

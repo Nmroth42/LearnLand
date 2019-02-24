@@ -31,7 +31,7 @@ module.exports = {
       res.send(songs)
     } catch (err) {
       res.status(500).send({
-        error: 'An error has occured :(('
+        error: 'An error has occured :('
       })
     }
   },
