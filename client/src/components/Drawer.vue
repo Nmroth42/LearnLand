@@ -3,7 +3,7 @@
     <aside v-show="$store.state.IsDrawerOpen" id="s">
     
    
-     
+     test
       
     
       
